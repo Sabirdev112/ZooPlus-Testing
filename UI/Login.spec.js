@@ -7,11 +7,10 @@ test ('User logs in successfully', async ({page}) => {
   const login = new Login (page);
 
   await login.goto();
+  await login.clickAcceptCookies();
+  await login.clickProfile();
   await login.login(user.email, user.password);
   await login.clickSignIn();
-  await login.clickCrossModuleButton();
-  await login.clickSidebarButton();
-  await login.clickProfile();
-  await login.clickLogout();
+  
   
 });
